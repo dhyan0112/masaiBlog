@@ -3,9 +3,9 @@ const { BlogModel } = require('../models/blog.model')
 const blogRouter=express.Router()
 
 blogRouter.post('/blogs',async(req,res)=>{
-    const payload=req.body
+    const {username,title,content,category,date,likes,comments}=req.body
     try {
-        const blog=new BlogModel(payload)
+        const blog=new BlogModel({username,title,content,category,date,likes,comments})
         await blog.save()
         res.send('Blog has been posted')
     } catch (err) {
