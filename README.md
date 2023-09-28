@@ -1,1 +1,1 @@
-# masaiBlog
+# BlogApp
